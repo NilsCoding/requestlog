@@ -29,7 +29,7 @@ public class SimpleXmlLogBufferSerializer implements LogBufferSerializer {
     @Override
     public LogBufferSerializer startOutput() {
         this.buffer.setLength(0);
-        this.buffer.append("<").append(name).append(">").append(StringUtils.NEWLINE);
+        this.buffer.append("<").append(this.name).append(">").append(StringUtils.NEWLINE);
         return this;
     }
 
@@ -66,7 +66,7 @@ public class SimpleXmlLogBufferSerializer implements LogBufferSerializer {
                     buffer.append(tmpStr);
                 }
             }
-            buffer.append("</").append(name).append(">");
+            buffer.append("</").append(nameStr).append(">");
             buffer.append(StringUtils.NEWLINE);
         }
         return this;
@@ -74,7 +74,7 @@ public class SimpleXmlLogBufferSerializer implements LogBufferSerializer {
 
     @Override
     public LogBufferSerializer endOutput() {
-        this.buffer.append("</").append(name).append(">").append(StringUtils.NEWLINE);
+        this.buffer.append("</").append(this.name).append(">").append(StringUtils.NEWLINE);
         return this;
     }
 
