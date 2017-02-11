@@ -2,7 +2,7 @@
 
 This is a sample project for a Servlet Filter which logs request data like headers and parameters. Logging is only be done if the request method is *POST*.
 
-It also allows you to add a unique value to the request attributes. This works independently from the logging. In Tomcat server you can use the pattern `%{X-uniqueRequest}r` for accessing this unique request attribute (assuming you did not change the default value as described below).
+It also allows you to add a unique value to the request attributes. This works independently from the logging. In Tomcat server you can use the pattern `%{X-uniqueRequest}r` for accessing this unique request attribute (assuming you did not change the default value as described below). When using the (optional) `uri_pattern` is specified, the unique value is only added to the request for those uris matching the pattern.
 
 ## Configuration
 
